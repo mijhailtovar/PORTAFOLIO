@@ -9,7 +9,7 @@
             alt="Avatar de Mijhail A. Tovar" 
           />
           <img className="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-96 sm:w-full sm:object-cover object-center lg:hidden"
-            src="/images/imagen_mijhail.png" alt="Woman workcationing on the beach" />
+            src="/images/imagen_mijhail.jpg" alt="Woman workcationing on the beach" />
           
           <h1 
             className="mt-6 text-2xl font-headline tracking-light font-semibold text-gray-900 
@@ -55,7 +55,7 @@
       
       <div className="hidden relative lg:block 2xl:col-span-3">
         <img className="absolute inset-0 w-full h-full object-cover object-center"
-          src="/images/imagen_mijhail.png" alt="Woman workcationing on the beach" />
+          src="/images/imagen_mijhail.jpg" alt="Woman workcationing on the beach" />
       </div>
     </div>
 
