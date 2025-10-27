@@ -5,11 +5,13 @@ data, methods o mounted
 */
 
 <script>
+import FooterComponent from './components/FooterComponent.vue';
 
 
 export default{
   name: 'app',
   components: {
+    FooterComponent
   }
 }
 
@@ -21,6 +23,8 @@ export default{
       AQUI VA LA PAGINA WEB COMO TAL Y EL ROUTER COMPONENT PARA CAMBIAR ENTRE COMPONENTES
     -->
       <router-view></router-view>
+
+      <FooterComponent></FooterComponent>
 
       
 
