@@ -18,7 +18,7 @@
             Mijhail A. Tovar
             <br className="hidden lg:inline" /> <span className="text-brand">Ingeniero de Sistemas & Full Stack</span>
           </h1>
-          <router-link to="/editor" class="text-sm text-gray-800 hover:text-white">Ver Portafolio de edicion de videos →</router-link>
+          <router-link to="/editor" class="text-sm text-gray-800 hover:text-blue-500">Ver Portafolio de edicion de videos →</router-link>
           
           <div class="mt-2 text-gray-600 sm:mt-4 sm:text-xl">
     
