@@ -7,6 +7,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ErrorComponent from './components/ErrorComponent.vue';
 import PortafolioPage from './components/PortafolioPage.vue';
 import TestTailwind from './components/TestTailwind.vue';
+import EditorPage from './components/EditorPage.vue'; // Crea este componente nuevo
 
 //importa moment para las fechas
 import moment from 'moment';
@@ -20,6 +21,7 @@ import './assets/css/main.css'
 const routes = [
     { path: '/home', component: PortafolioPage },
     { path: '/', component: PortafolioPage },
+    { path: '/editor', component: EditorPage }, // Tu nuevo portafolio de Video
     //pagina 404 o pagina de error
     { path: '/:pathMatch(.*)*', name: 'not-found', component: ErrorComponent },
     
