@@ -19,6 +19,51 @@
         </div>
       </div>
     </div>
+
+
+    <div class="bg-white py-16 px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 text-center mb-4">Servicios de Ingeniería de Contenido</h2>
+        <p class="text-center text-gray-600 mb-12">Soluciones de alto rendimiento para creadores que buscan escala y retención.</p>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="border rounded-2xl p-8 hover:shadow-2xl transition shadow-lg">
+            <h3 class="text-xl font-bold mb-2">Viral Retention</h3>
+            <p class="text-4xl font-extrabold mb-6">$250<span class="text-base font-normal text-gray-500">/mes</span></p>
+            <ul class="text-sm space-y-3 mb-8 text-gray-600">
+              <li>• 10 Videos cortos (1-2 min)</li>
+              <li>• B-roll de Anime/Stock incluido</li>
+              <li>• Subtítulos dinámicos optimizados</li>
+              <li>• Limpieza de audio con Audacity</li>
+            </ul>
+          </div>
+
+          <div class="border-2 border-brand rounded-2xl p-8 shadow-xl relative scale-105 bg-gray-50">
+            <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Más Popular</span>
+            <h3 class="text-xl font-bold mb-2">Ecosistema Digital</h3>
+            <p class="text-4xl font-extrabold mb-6">$500<span class="text-base font-normal text-gray-500">/inicio</span></p>
+            <ul class="text-sm space-y-3 mb-8 text-gray-700 font-medium">
+              <li>• Landing Page en Vue.js (Frontend)</li>
+              <li>• Hosting en Vercel incluido</li>
+              <li>• 10 Videos del primer mes</li>
+              <li>• Optimización de Retención (IA)</li>
+            </ul>
+          </div>
+
+          <div class="border rounded-2xl p-8 hover:shadow-2xl transition shadow-lg">
+            <h3 class="text-xl font-bold mb-2">Custom Frontend</h3>
+            <p class="text-4xl font-extrabold mb-6">$350<span class="text-base font-normal text-gray-500">/proyecto</span></p>
+            <ul class="text-sm space-y-3 mb-8 text-gray-600">
+              <li>• SPA personalizada (Vue/React)</li>
+              <li>• Diseño 100% Adaptativo</li>
+              <li>• Integración de Media (YouTube/API)</li>
+              <li>• Despliegue en producción</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </template>
   
   <script setup>
