@@ -66,40 +66,89 @@
     
   </template>
   
-  <script setup>
+<script setup>
   import { onMounted, onUnmounted } from 'vue'; // Añadimos hooks de ciclo de vida
   import Card from './Card.vue';
   import { proyectosDestacados } from '@/data/proyectosDestacados';
   import { computed } from 'vue';
   
-  // 1. Lógica de Filtrado
-  // Filtramos solo los proyectos que marcamos como 'video'
-  const videosSolo = computed(() => {
-    return proyectosDestacados.filter(p => p.tipo === 'video');
+    // 1. Lógica de Filtrado
+    // Filtramos solo los proyectos que marcamos como 'video'
+    const videosSolo = computed(() => {
+      return proyectosDestacados.filter(p => p.tipo === 'video');
+    });
+
+    // 2. Lógica de SEO (Título y Canónica)
+  onMounted(() => {
+    // Cambiar el título de la pestaña
+    document.title = "Edición de Video y Retención | Mijhail Tovar";
+
+    // Gestionar la URL Canónica
+    let canonicalLink = document.querySelector("link[rel='canonical']");
+    
+    if (!canonicalLink) {
+      // Si no existe, lo creamos
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    
+    // Establecemos la URL específica de esta sección
+    canonicalLink.setAttribute('href', 'https://portafolio-mu-lilac-62.vercel.app/editor');
+
+    // Crear el Script de Datos Estructurados (JSON-LD)
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Video Editing and Content Optimization",
+      "provider": {
+        "@type": "Person",
+        "name": "Mijhail Tovar",
+        "url": "https://portafolio-mu-lilac-62.vercel.app/"
+      },
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Ingeniería de Contenido",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Viral Retention (Videos cortos)",
+              "description": "10 Videos optimizados para retención en YouTube/TikTok con limpieza de audio."
+            },
+            "price": "250.00",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ecosistema Digital",
+              "description": "Landing Page en Vue.js + 10 Videos del primer mes + Optimización con IA."
+            },
+            "price": "500.00",
+            "priceCurrency": "USD"
+          }
+        ]
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'schema-editor';
+    script.text = JSON.stringify(schemaData);
+    document.head.appendChild(script);
   });
 
-  // 2. Lógica de SEO (Título y Canónica)
-onMounted(() => {
-  // Cambiar el título de la pestaña
-  document.title = "Edición de Video y Retención | Mijhail Tovar";
+  // Limpieza para evitar duplicados al navegar entre rutas
+  // Opcional: Limpiar al salir para que al volver al inicio no se quede el título de editor
+  onUnmounted(() => {
+    const script = document.getElementById('schema-editor');
+    if (script) script.remove();
 
-  // Gestionar la URL Canónica
-  let canonicalLink = document.querySelector("link[rel='canonical']");
-  
-  if (!canonicalLink) {
-    // Si no existe, lo creamos
-    canonicalLink = document.createElement('link');
-    canonicalLink.setAttribute('rel', 'canonical');
-    document.head.appendChild(canonicalLink);
-  }
-  
-  // Establecemos la URL específica de esta sección
-  canonicalLink.setAttribute('href', 'https://portafolio-mu-lilac-62.vercel.app/editor');
-});
+    document.title = "Mijhail Tovar | Full Stack Developer";
+  });
 
-// Opcional: Limpiar al salir para que al volver al inicio no se quede el título de editor
-onUnmounted(() => {
-  document.title = "Mijhail Tovar | Full Stack Developer";
-});
-
-  </script>
+</script>
