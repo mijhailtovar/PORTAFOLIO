@@ -67,7 +67,7 @@
   </template>
   
   <script setup>
-  import { onMounted, onUnmounted, computed } from 'vue'; // Añadimos hooks de ciclo de vida
+  import { onMounted, onUnmounted } from 'vue'; // Añadimos hooks de ciclo de vida
   import Card from './Card.vue';
   import { proyectosDestacados } from '@/data/proyectosDestacados';
   import { computed } from 'vue';
