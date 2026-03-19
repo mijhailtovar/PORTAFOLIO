@@ -67,12 +67,39 @@
   </template>
   
   <script setup>
+  import { onMounted, onUnmounted, computed } from 'vue'; // Añadimos hooks de ciclo de vida
   import Card from './Card.vue';
   import { proyectosDestacados } from '@/data/proyectosDestacados';
   import { computed } from 'vue';
   
+  // 1. Lógica de Filtrado
   // Filtramos solo los proyectos que marcamos como 'video'
   const videosSolo = computed(() => {
     return proyectosDestacados.filter(p => p.tipo === 'video');
   });
+
+  // 2. Lógica de SEO (Título y Canónica)
+onMounted(() => {
+  // Cambiar el título de la pestaña
+  document.title = "Edición de Video y Retención | Mijhail Tovar";
+
+  // Gestionar la URL Canónica
+  let canonicalLink = document.querySelector("link[rel='canonical']");
+  
+  if (!canonicalLink) {
+    // Si no existe, lo creamos
+    canonicalLink = document.createElement('link');
+    canonicalLink.setAttribute('rel', 'canonical');
+    document.head.appendChild(canonicalLink);
+  }
+  
+  // Establecemos la URL específica de esta sección
+  canonicalLink.setAttribute('href', 'https://portafolio-mu-lilac-62.vercel.app/editor');
+});
+
+// Opcional: Limpiar al salir para que al volver al inicio no se quede el título de editor
+onUnmounted(() => {
+  document.title = "Mijhail Tovar | Full Stack Developer";
+});
+
   </script>
